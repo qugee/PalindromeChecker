@@ -14,24 +14,35 @@ public void setup()
     }
   }
 }
-public boolean palindrome(String word){
-  String reversed = reverse(word);
-  if(word.equals(reversed))
-  return true;
-  else
+public boolean palindrome(String word)
+{
+  if (reverse(word).equalsIgnoreCase(noSpaces(word)))
+  {
+    return true;
+  }
   return false;
 }
-  public String reverse(String word){
+  public String reverse(String str){
   String a = "";
-  for(int i = word.length();i>0;i--)
-  a = a +word.substring(i-1,i);
+  for(int i = str.length();i>0;i--){
+  if (str.charAt(i) != ' '){
+  a = a +str.substring(i,i+1);
+  }
+  }
+  a = onlyChar(a);
   return a;
 }
 
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
+      String a = new String();
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (Character.isLetter(str.charAt(i)))
+    {
+      a = a + str.substring(i, i+1);
+    }
+  }
     return sNew;
 }
 
