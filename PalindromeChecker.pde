@@ -22,7 +22,18 @@ public boolean palindrome(String word)
   }
   return false;
 }
-  public String reverse(String str){
+  public String reverse(String str)
+{
+  String a = new String();
+  for (int i = str.length()-1; i >= 0; i--)
+  {
+    a = a + str.substring(i, i+1);
+  }
+  sNew = noSpaces(sNew);
+  return a;
+  }
+  
+  public String noSpaces(String str){
   String a = "";
   for(int i = str.length();i>0;i--){
   if (str.charAt(i) != ' '){
@@ -33,7 +44,7 @@ public boolean palindrome(String word)
   return a;
 }
 
-public String reverse(String str)
+public String onlyChar(String str)
 {
       String a = new String();
   for (int i = 0; i < str.length(); i++)
